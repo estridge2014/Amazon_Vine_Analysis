@@ -32,7 +32,7 @@ Vine DF
 
  after creating these dataframes I uploaded the transformed data into the appropriate tables and ran queries in pgAdmin to confirm that the data had been uploaded.
 
-## Conslusion (examining for bias): 
+## Conclusion (examining for bias): 
 
 The goal of this analysis was to determine if there was any bias towards reviews that were written as part of the Vine program, more specifically whether having a paid Vine review makes a difference in the percentage of 5-star reviews the product recieved. To do this I examined the vine dataframe which I exported as a csv through pg admin. Using pandas to continue the analysis, the conslusions I came to are below.
 
@@ -58,6 +58,8 @@ The results ended up being:
 Because there was no vine reviews in the dataset, there weren't any that had 5 stars. The percentage of non-vine reviews that were 5-star is 0.7964703318878028. 
 
 This number seems very high, which could possibly be because of multiple reasons. Maybe many of those reviews were made by automated bots. Or, it could be accurate and the percentage is that high because if you are choosing to post a review without being paid to do so, you probably feel strongly about whatever your purchase was (either negatively or positively), and most people really just were very happy with their purchase. If the second is the case, thats a positive sign because it would mean that the majority of people are happy with your product. 
+
+Because there are no (reported) vine reviews, I have no way to determine on how that program would affect the likeliness of bias in this dataset, and there isn't any additional analysis I could do to support this statement. There are no 'Y' values in the vine column to analyze. 
 
 
 
