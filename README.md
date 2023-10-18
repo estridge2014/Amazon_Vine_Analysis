@@ -30,7 +30,7 @@ For this analysis I've created an Amazon Web Services RDS database with tables i
 
 <img width="684" alt="Screen Shot 2021-10-16 at 12 22 18 PM" src="https://user-images.githubusercontent.com/84936545/137594981-8d34755f-2e22-4ac7-a32f-5611239f2cdf.png">
 
-I uploaded the transformed data in these dataframes into the appropriate tables in pgadmin. I ran queries using postgresql in to confirm that the data had been uploaded.
+I uploaded the transformed data in these dataframes into the appropriate tables in pgadmin. I ran queries using postgresql to confirm that the data had been uploaded.
 
 ## Conclusion (examining for bias): 
 
