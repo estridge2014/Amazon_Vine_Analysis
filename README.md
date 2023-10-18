@@ -55,8 +55,8 @@ The results ended up being:
 
 #### 3. What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
-Because there was no vine reviews in the dataset, there weren't any vine reviews that earned 5 stars. The percentage of non-vine reviews that earned 5-star is 0.7964703318878028. 
+Because there are no vine reviews in the dataset, there weren't any vine reviews that earned 5 stars. The percentage of non-vine reviews that earned 5-star is 0.7964703318878028. 
 
-While it is possible that this statistic accurately represents individual buyers opinion of the product, this high five star percentage could be a sign of bias in the dataset. Two types of self-selection bias are common in product reviews and could possibly affect this dataset. Acquisition bias (mostly consumers with a favorable predisposition acquire a product and hence write a product review) and underreporting bias (consumers with extreme, either positive or negative, ratings are more likely to write reviews than consumers with moderate product ratings) could affect percentage of 5-star reviews. 
+While it is possible that this statistic accurately represents individual buyers opinion of the product, this high five star percentage could be a sign of bias in the dataset. Two types of self-selection bias are common in product reviews and could possibly affect this dataset. Acquisition bias (mostly consumers with a favorable predisposition acquire a product and hence write a product review) and underreporting bias (consumers with extreme, either positive or negative, ratings are more likely to write reviews than consumers with moderate product ratings) could have affected the percentage of 5-star reviews. 
 
-Because this dataset contains no (reported) vine reviews I have no way to determine how that program would affect the likeliness of bias in this dataset, and there isn't any additional analysis I could do to support this statement. 
+Because this dataset contains no (reported) vine reviews I am unable to determine how the vine program would affect the likeliness of bias in this dataset. 
