@@ -38,7 +38,7 @@ The goal of this analysis was to determine if there was any bias towards reviews
 
 #### 1. How many Vine reviews and non-Vine reviews were there?
 
-The overall amount of reviews in this dataset was 1688884. After examining the data and filtering to determine how many were vine reviews I observed that there were no vine reviews listed in the data. The amount of values that was listed as not vine was 1688884. It's possible that no one wrote a vine review for these products or there could have been an outside reason as to why they wouldn't review these products within the vine program. 
+The overall amount of reviews in this dataset was 1688884. After examining the data and filtering to determine how many were vine reviews I observed that there were no vine reviews listed in the data. The amount of values that was listed as not vine was 1688884.  
 
 #### 2. How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
 
