@@ -20,7 +20,7 @@ The Amazon Vine program is a service that allows manufacturers and publishers to
 
 <img width="1352" alt="Screen Shot 2021-10-16 at 12 06 30 PM" src="https://user-images.githubusercontent.com/84936545/137594392-b06fb75f-ecd5-46ae-a5c5-53b8b6cd6ab2.png">
 
-## ETL: 
+## Deliverable 1: Perform ETL on Amazon Product Reviews
 
 Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
 
@@ -47,7 +47,7 @@ For this analysis I've created an Amazon Web Services RDS database with tables i
 
 I uploaded the transformed data in these dataframes into the appropriate tables in pgadmin. I ran queries using postgresql to confirm that the data had been uploaded.
 
-## Analysis & Conclusion (examining for bias): 
+## Deliverable 2: Analysis (examining for bias): 
 
 Reference Amazon Vine Program analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
 
@@ -73,6 +73,8 @@ The results ended up being:
 #### 3. What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
 Because there are no vine reviews in the dataset, there weren't any vine reviews that earned 5 stars. The percentage of non-vine reviews that earned 5-star is 0.7964703318878028. 
+
+## Deliverable 3: Conclusion 
 
 While it is possible that this statistic accurately represents individual buyers opinion of the product, this high five star percentage could be a sign of bias in the dataset. Two types of self-selection bias are common in product reviews and could possibly affect this dataset. Acquisition bias (mostly consumers with a favorable predisposition acquire a product and hence write a product review) and underreporting bias (consumers with extreme, either positive or negative, ratings are more likely to write reviews than consumers with moderate product ratings) could have affected the percentage of 5-star reviews. 
 
