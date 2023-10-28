@@ -1,5 +1,18 @@
 # Amazon Vine Program Analysis 
 
+## Resources 
+
+Software: Python 3.7.6, Conda 4.10.1 
+
+Processing Engine: Spark
+
+Database: AWS D3 
+
+Interface: PgAdmin Version 5.2
+
+Environment: Jupyter Notebook
+
+
 ## Overview: 
 
 The Amazon Vine program is a service that allows manufacturers and publishers to receive reviews for their products. Companies pay a small fee to Amazon and provide products to Amazon Vine members who are then required to publish a review. Amazon invites customers who’ve earned trust in the Amazon community for their insightful reviews to serve as Vine Voices. Voices request products they want to review and try them out free of charge and share their honest, unbiased opinions in a review. I've chosen a dataset from amazon containing reviews of US digital music purchases to determine if there is bias in the reviews in the dataset. The image below describes the data contained in each column. 
@@ -8,6 +21,8 @@ The Amazon Vine program is a service that allows manufacturers and publishers to
 <img width="1352" alt="Screen Shot 2021-10-16 at 12 06 30 PM" src="https://user-images.githubusercontent.com/84936545/137594392-b06fb75f-ecd5-46ae-a5c5-53b8b6cd6ab2.png">
 
 ## ETL: 
+
+Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
 
 For this analysis I've created an Amazon Web Services RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin. The four dataframes are shown below. 
 
@@ -33,6 +48,8 @@ For this analysis I've created an Amazon Web Services RDS database with tables i
 I uploaded the transformed data in these dataframes into the appropriate tables in pgadmin. I ran queries using postgresql to confirm that the data had been uploaded.
 
 ## Analysis & Conclusion (examining for bias): 
+
+Reference Amazon Vine Program analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
 
 The goal of this analysis was to determine if there was any bias towards reviews that were written as part of the Vine program in this dataset. More specifically whether having a paid Vine review made a difference in the percentage of 5-star reviews the products in this dataset recieved. To do this I exported as a csv through PgAdmin then used pandas to analyze the dataset. The conslusions I found during this analysis are discussed below.
 
