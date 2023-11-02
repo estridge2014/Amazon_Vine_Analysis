@@ -9,7 +9,9 @@ The Amazon Vine program is a service that allows manufacturers and publishers to
 
 ### Shortened analysis description 
 
-For this analysis I've created an AWS RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin. The four dataframes are shown below. 
+Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
+
+I've created an AWS RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin. The four dataframes are shown below. 
 
 #### Customers DF 
 
@@ -32,8 +34,10 @@ For this analysis I've created an AWS RDS database with tables in PgAdmin (an op
 
 #### Examine for Bias
 
+Reference Amazon Vine Program analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
+
 1. How many Vine reviews and non-Vine reviews were there?
-The overall amount of reviews was 1688884. After examining the data I observed there were no vine reviews in the data. The amount of values that was listed as not vine was 1688884.
+The overall amount of reviews was 1688884. I observed there were no vine reviews in the data. The amount of values that was listed as not vine was 1688884.
 
 2. How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
 Because there were no vine reviews, there were 0 vine reviews with 5 stars. I chose to determine the amount of ratings for each of the 5 possible values in the star_ratings column. To do this I used the for loop below.
