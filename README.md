@@ -11,7 +11,7 @@ The Amazon Vine program is a service that allows manufacturers and publishers to
 
 Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
 
-I've created an AWS RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin. The four dataframes are shown below. 
+I've created an AWS RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames matching schema in PgAdmin. The four dataframes are shown below. 
 
 #### Customers DF 
 
@@ -34,24 +34,24 @@ I've created an AWS RDS database with tables in PgAdmin (an open source manageme
 
 #### Examine for Bias
 
-Reference Amazon Vine Program analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
+Analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
 
 1. How many Vine reviews and non-Vine reviews were there?
 The overall amount of reviews was 1688884. I observed there were no vine reviews in the data. The amount of values that was listed as not vine was 1688884.
 
 2. How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
-Because there were no vine reviews, there were 0 vine reviews with 5 stars. I chose to determine the amount of ratings for each of the 5 possible values in the star_ratings column. To do this I used the for loop below.
+There were 0 vine reviews with 5 stars. I determined the amount of ratings for each of the 5 possible values in the star_ratings column. To do this I used the for loop below.
 
 ```
 for x in range(1, df.star_rating.nunique()+ 1):
     length = len(df[(df['star_rating'] == x)])
     print(f'Star_count =  {x} amount = {length} ')
 ```
-The results ended up being: 
+Results: 
 
 <img width="289" alt="Screen Shot 2021-10-16 at 12 56 33 PM" src="https://user-images.githubusercontent.com/84936545/137595888-e2cc4c27-9011-4f04-ad06-57cb195bd201.png">
 
-Self-selection bias could possibly affect this dataset. Acquisition bias and/or underreporting bias could have affected the percentage of 5-star reviews.
+Acquisition bias and/or underreporting bias could have affected the percentage of 5-star reviews.
 Because this dataset contains no (reported) vine reviews I am unable to determine how the vine program would affect the likeliness of bias in this dataset.
 
 
@@ -86,7 +86,7 @@ The Amazon Vine program is a service that allows manufacturers and publishers to
 
 Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
 
-For this analysis I've created an Amazon Web Services RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin. The four dataframes are shown below. 
+For this analysis I've created an Amazon Web Services RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin shown below. 
 
 #### Customers DF 
 
