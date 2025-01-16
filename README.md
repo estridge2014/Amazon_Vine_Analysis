@@ -1,15 +1,11 @@
+## Resources
 
-## Resources 
+- **Software**: Python 3.7.6, Conda 4.10.1  
+- **Processing Engine**: Spark  
+- **Database**: AWS D3  
+- **Interface**: PgAdmin Version 5.2  
+- **Environment**: Jupyter Notebook  
 
-Software: Python 3.7.6, Conda 4.10.1 
-
-Processing Engine: Spark
-
-Database: AWS D3 
-
-Interface: PgAdmin Version 5.2
-
-Environment: Jupyter Notebook
 
 
 # Data Analysis Project: Investigating Potential Bias in Amazon Vine Reviews
@@ -32,7 +28,11 @@ Below is an image summarizing the data structure, including details of each colu
 
 Reference Amazon Vine Analysis ETL [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Amazon_Reviews_ETL.ipynb)
 
-For this analysis I've created an Amazon Web Services RDS database with tables in PgAdmin (an open source management tool for PostgreSQL). I extracted data from the reviews of entire US digital music purchases dataset from amazon into a spark DataFrame. Then transformed the DataFrame into four separate DataFrames that matched table schema in PgAdmin shown below. 
+For this analysis, I created an **Amazon Web Services (AWS) RDS database** and used **PgAdmin**, an open-source management tool for PostgreSQL, to manage the database tables. 
+
+To process the data, I extracted the reviews from the complete **US Digital Music Purchases** dataset provided by Amazon into a **Spark DataFrame**. The DataFrame was then transformed into four separate DataFrames, each designed to match the schema of the tables in PgAdmin. These tables are shown below.
+
+
 
 #### Customers DF 
 
@@ -59,15 +59,19 @@ I uploaded the transformed data in these dataframes into the appropriate tables 
 
 Reference Amazon Vine Program analysis code [here](https://github.com/estridge2014/Amazon_Vine_Analysis/blob/main/Vine_Review_Analysis.ipynb) 
 
-The goal of this analysis was to determine if there was any bias towards reviews that were written as part of the Vine program in this dataset. More specifically whether having a paid Vine review made a difference in the percentage of 5-star reviews the products in this dataset recieved. To do this I exported as a csv through PgAdmin then used pandas to analyze the dataset. The conslusions I found during this analysis are discussed below.
+The goal of this analysis was to determine if there was any bias in the reviews written as part of the Vine program in this dataset. Specifically, I aimed to examine whether having a paid Vine review influenced the percentage of 5-star reviews that products received. 
+
+To conduct this analysis, I exported the data as a CSV file through **PgAdmin** and used **Pandas** for data analysis. The conclusions drawn from this analysis are discussed below.
+
+## Key Findings
 
 #### 1. How many Vine reviews and non-Vine reviews were there?
-
-The overall amount of reviews in this dataset was 1688884. After examining the data and filtering to determine how many were vine reviews I observed that there were no vine reviews listed in the data. The amount of values that was listed as not vine was 1688884.  
+The total number of reviews in the dataset was **1,688,884**. Upon filtering and examining the data for Vine reviews, I observed that there were **no Vine reviews** listed in the dataset. The count of non-Vine reviews was **1,688,884**, accounting for all reviews in the dataset.
 
 #### 2. How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
+Since there were no Vine reviews in the dataset, there were **0 Vine reviews with 5 stars**. 
 
-Because there were no vine reviews, there were 0 vine reviews with 5 stars. I chose to determine the amount of ratings for each of the 5 possible values in the star_ratings column. To do this I used the for loop below. 
+To further analyze the distribution of star ratings among non-Vine reviews, I calculated the number of reviews for each of the 5 possible star ratings. Below is the code snippet used for this calculation:
 
 ```
 for x in range(1, df.star_rating.nunique()+ 1):
@@ -80,10 +84,16 @@ The results ended up being:
 
 #### 3. What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
-Because there are no vine reviews in the dataset, there weren't any vine reviews that earned 5 stars. The percentage of non-vine reviews that earned 5-star is 0.7964703318878028. 
+Because there are no Vine reviews in the dataset, there were no Vine reviews that earned 5 stars. The percentage of non-Vine reviews that earned 5 stars is **79.65%** (calculated as 0.7964703318878028).
 
 ## Deliverable 3: Conclusion 
 
-While it is possible that this statistic accurately represents individual buyers opinion of the product, this high five star percentage could be a sign of bias in the dataset. Two types of self-selection bias are common in product reviews and could possibly affect this dataset. Acquisition bias (mostly consumers with a favorable predisposition acquire a product and hence write a product review) and underreporting bias (consumers with extreme, either positive or negative, ratings are more likely to write reviews than consumers with moderate product ratings) could have affected the percentage of 5-star reviews. 
+While it is possible that this statistic accurately represents individual buyers' opinions of the product, this high percentage of 5-star reviews could also indicate potential bias in the dataset. Two common types of self-selection bias in product reviews may have influenced these results:
 
-Because this dataset contains no (reported) vine reviews I am unable to determine how the vine program would affect the likeliness of bias in this dataset. 
+1. **Acquisition Bias**: Consumers with a favorable predisposition toward a product are more likely to acquire it and subsequently write a review.  
+2. **Underreporting Bias**: Consumers with extreme opinions, either highly positive or negative, are more likely to write reviews than those with moderate ratings.
+
+These biases could have impacted the observed percentage of 5-star reviews.
+
+Since this dataset contains no reported Vine reviews, I am unable to evaluate how the Vine program might influence the likelihood of bias within this dataset.
+
